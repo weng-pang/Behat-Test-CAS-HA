@@ -4,12 +4,17 @@ use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use PHPUnit\Framework\Assert;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context
 {
+    //TODO configuration move to somewhere else?
+    private $node1='https://10.20.204.72:9443/cas';
+    private $node2='https://10.20.204.72:9444/cas';
+    private $node3='https://10.20.204.72:9445/cas';
     /**
      * Initializes context.
      *
@@ -21,14 +26,37 @@ class FeatureContext implements Context
     {
         
     }
+    
+    private function nodeConnectionTest($node)
+    {
+        // Connect to a node
+        $response = \Httpful\Request::get($this->node1)->send();
+        return $response->code;
+    }
+    
+    private function nodeLoginTest($node,$username,$password)
+    {
+        
+    }
+    
+    private function nodeTicketTest($node,$ticket)
+    {
+        
+    }
+    
+    private function nodeLogoutTest($node,$ticket)
+    {
+        
+    }
 
     /**
      * @Given a deployed CAS service with :count nodes
      */
     public function aDeployedCasServiceWithNodes($count)
     {
-        echo $count. "\n";
-        //throw new PendingException();
+        Assert::assertEquals(200, $this->nodeConnectionTest($this->node1));
+        Assert::assertEquals(200, $this->nodeConnectionTest($this->node2));
+        Assert::assertEquals(200, $this->nodeConnectionTest($this->node3));
     }
 
     /**
