@@ -19,103 +19,109 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
+        
     }
 
     /**
-     * @Given a deployed CAS service with :arg1 nodes
+     * @Given a deployed CAS service with :count nodes
      */
-    public function aDeployedCasServiceWithNodes($arg1)
+    public function aDeployedCasServiceWithNodes($count)
     {
-        throw new PendingException();
+        echo $count. "\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Given I have logged in node1 with a valid :arg1 and :arg2
+     * @Given I have logged in node1 with a valid :username and :password
      */
-    public function iHaveLoggedInNodeWithAValidAnd($arg1, $arg2)
+    public function iHaveLoggedInNodeWithAValidAnd($username, $password)
     {
-        throw new PendingException();
+        echo 'node1 login ' . $username . " " . $password . "\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Given I have got the :arg1 session for that user
+     * @Given I have got the :ticket session for that user
      */
-    public function iHaveGotTheSessionForThatUser($arg1)
+    public function iHaveGotTheSessionForThatUser($ticket)
     {
-        throw new PendingException();
+        echo $ticket. " obtained \n";
+        //throw new PendingException();
     }
 
     /**
-     * @When I check the :arg1 in node2
+     * @When I check the :ticket in node1
      */
-    public function iCheckTheInNode($arg1)
+    public function iCheckTheInNode1($ticket)
     {
-        throw new PendingException();
+        echo 'checking ticket in node 1'."\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Then I get the correct :arg1 of the user that created the session
+     * @Then I get the correct :username of the user that created the session
      */
-    public function iGetTheCorrectOfTheUserThatCreatedTheSession($arg1)
+    public function iGetTheCorrectOfTheUserThatCreatedTheSession($username)
     {
-        throw new PendingException();
+        echo 'username for session' ."\n";
+        //throw new PendingException();
     }
 
     /**
-     * @When I check the :arg1 in node3
+     * @When I check the :ticket in node2
      */
-    public function iCheckTheInNode2($arg1)
+    public function iCheckTheInNode2($ticket)
     {
-        throw new PendingException();
+        echo 'checking ticket in node 2'."\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Given I have logged in node2 with a valid :arg1 and :arg2
+     * @Given I have logged in node2 with a valid :username and :password
      */
-    public function iHaveLoggedInNodeWithAValidAnd2($arg1, $arg2)
+    public function iHaveLoggedInNodeWithAValidAnd2($username, $password)
     {
-        throw new PendingException();
+        echo 'node2 login' . $username . " " . $password . "\n";
+        //throw new PendingException();
     }
 
     /**
-     * @When I check the :arg1 in node1
+     * @When I check the :ticket in node3
      */
-    public function iCheckTheInNode3($arg1)
+    public function iCheckTheInNode3($ticket)
     {
-        throw new PendingException();
+        echo 'checking ticket in node 3'."\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Given I have logged in node3 with a valid :arg1 and :arg2
+     * @Given I have logged in node3 with a valid :username and :password
      */
-    public function iHaveLoggedInNodeWithAValidAnd3($arg1, $arg2)
+    public function iHaveLoggedInNodeWithAValidAnd3($username, $password)
     {
-        throw new PendingException();
+        echo 'node3 login' . $username . " " . $password . "\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Given I have logged out that :arg1 in node1
+     * @Given I have logged out that :ticket in node1
      */
-    public function iHaveLoggedOutThatInNode($arg1)
+    public function iHaveLoggedOutThatInNode($ticket)
     {
-        throw new PendingException();
+        echo 'node1 logout ' . $ticket . "\n";
+        //throw new PendingException();
     }
 
     /**
-     * @Then I get the message that describes it is an invalid :arg1
+     * @Then I get the message that describes it is an invalid :ticket
      */
-    public function iGetTheMessageThatDescribesItIsAnInvalid($arg1)
+    public function iGetTheMessageThatDescribesItIsAnInvalid($ticket)
     {
-        throw new PendingException();
+        echo 'invalid ticket shown ' . $ticket . "\n";
+        //throw new PendingException();
     }
 
-    /**
-     * @When I check the :arg1 in node :arg2
-     */
-    public function iCheckTheInNode4($arg1, $arg2)
-    {
-        throw new PendingException();
-    }
+
 
     /**
      * @Given I have logged out that :arg1 in node2
